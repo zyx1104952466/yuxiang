@@ -5,4 +5,5 @@
 
 ## 代码结构
 > - yuxiang-file:文件中心
+> - yuxiang-public:提供实体类、接口
 "# yuxiang" 
