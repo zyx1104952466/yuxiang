@@ -16,6 +16,8 @@
     <modules>
         <module>yuxiang-file</module>
         <module>yuxiang-public</module>
+        <module>yuxiang-server</module>
+        <module>yuxiang-manager</module>
     </modules>
     <packaging>pom</packaging>
 

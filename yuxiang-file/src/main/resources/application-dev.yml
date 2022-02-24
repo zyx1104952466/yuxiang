@@ -1,0 +1,9 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /yuxiang-file/
+
+logging:
+  config: classpath:conf/logback-spring.xml
+  file:
+    path: D:/log/yuxiang-file
