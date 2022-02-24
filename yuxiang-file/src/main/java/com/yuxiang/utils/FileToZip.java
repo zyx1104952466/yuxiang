@@ -7,7 +7,6 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.zip.ZipEntry;
@@ -30,36 +29,36 @@ public final class FileToZip {
      * @param sourceFilePath :待压缩的文件路径
      * @param zipFilePath    :压缩后存放路径
      * @param fileName       :压缩后文件的名称
-     * @return
+     * @return boolean
      */
     public static boolean fileToZip(String sourceFilePath, String zipFilePath, String fileName) {
         boolean flag = false;
             File sourceFile = new File(sourceFilePath);
         File zipFile = new File(zipFilePath + File.separator + fileName + ".zip");
 
-        if (sourceFile.exists() == false || zipFile.exists()) {
+        if (!sourceFile.exists() || zipFile.exists()) {
             logger.info("待压缩的文件目录：" + sourceFilePath + "不存在.");
         } else {
             if (zipFile.exists()) {
                 logger.info(zipFilePath + "目录下存在名字为:" + fileName + ".zip" + "打包文件.");
             } else {
-                try (ZipOutputStream zos = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(zipFile)));) {
+                try (ZipOutputStream zos = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(zipFile)))) {
 
                     File[] sourceFiles = sourceFile.listFiles();
                     if (null == sourceFiles || sourceFiles.length < 1) {
                         logger.info("待压缩的文件目录：" + sourceFilePath + "里面不存在文件，无需压缩.");
                     } else {
                         byte[] bufs = new byte[1024 * 10];
-                        for (int i = 0; i < sourceFiles.length; i++) {
+                        for (File file : sourceFiles) {
                             //创建ZIP实体，并添加进压缩包
-                            if (sourceFiles[i].getPath().contains(".zip")) {
+                            if (file.getPath().contains(".zip")) {
                                 logger.info("zip 不打包");
                                 continue;
                             }
-                            try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(sourceFiles[i]), 1024 * 10);) {
-                                ZipEntry zipEntry = new ZipEntry(sourceFiles[i].getName());
+                            try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file), 1024 * 10)) {
+                                ZipEntry zipEntry = new ZipEntry(file.getName());
                                 zos.putNextEntry(zipEntry);
-                                int read = 0;
+                                int read;
                                 while ((read = bis.read(bufs, 0, 1024 * 10)) != -1) {
                                     zos.write(bufs, 0, read);
                                 }
@@ -70,8 +69,6 @@ public final class FileToZip {
                         }
                         flag = true;
                     }
-                } catch (FileNotFoundException e) {
-                    throw new RuntimeException(e);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
