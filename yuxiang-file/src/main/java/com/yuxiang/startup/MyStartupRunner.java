@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  * @Version 1.0
  **/
 @Component
-@Order(value = 1)//代表启动时加载的顺序
+@Order(value = 1)
 public class MyStartupRunner implements CommandLineRunner {
 
     public static final Logger logger = LoggerFactory.getLogger(MyStartupRunner.class);
