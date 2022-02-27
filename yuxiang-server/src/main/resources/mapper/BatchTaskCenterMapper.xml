@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wglvzyx.mybatisredis.dao.BatchTaskCenterMapper">
+  <resultMap id="BaseResultMap" type="com.yuxiang.entity.BatchTaskCenter">
+    <constructor>
+      <arg column="id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="task_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="build_status" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="task_type" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="creator_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="batch_sid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.yuxiang.entity.BatchTaskCenter">
+    <constructor>
+      <arg column="id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="task_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="build_status" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="task_type" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="creator_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="batch_sid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="params" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Blob_Column_List">
+    params
+  </sql>
+  <insert id="insert" parameterType="com.yuxiang.entity.BatchTaskCenter">
+    insert into batch_task_center (id, task_name, build_status, 
+      task_type, creator_name, create_time, 
+      update_time, batch_sid, remark, 
+      params)
+    values (#{id,jdbcType=VARCHAR}, #{taskName,jdbcType=VARCHAR}, #{buildStatus,jdbcType=CHAR}, 
+      #{taskType,jdbcType=CHAR}, #{creatorName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{batchSid,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{params,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yuxiang.entity.BatchTaskCenter">
+    insert into batch_task_center
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="taskName != null">
+        task_name,
+      </if>
+      <if test="buildStatus != null">
+        build_status,
+      </if>
+      <if test="taskType != null">
+        task_type,
+      </if>
+      <if test="creatorName != null">
+        creator_name,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="batchSid != null">
+        batch_sid,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="params != null">
+        params,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="taskName != null">
+        #{taskName,jdbcType=VARCHAR},
+      </if>
+      <if test="buildStatus != null">
+        #{buildStatus,jdbcType=CHAR},
+      </if>
+      <if test="taskType != null">
+        #{taskType,jdbcType=CHAR},
+      </if>
+      <if test="creatorName != null">
+        #{creatorName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="batchSid != null">
+        #{batchSid,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="params != null">
+        #{params,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
