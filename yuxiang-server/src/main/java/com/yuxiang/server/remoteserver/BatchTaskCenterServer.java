@@ -7,8 +7,8 @@ import com.yuxiang.page.Pager;
 import com.yuxiang.page.Paginater;
 import com.yuxiang.remote.iface.IBatchTaskCenter;
 import com.yuxiang.server.service.BatchTaskCenterService;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import java.util.List;
  * @version 1.0
  * @date 2022/2/24 14:49
  */
-@Service
+@DubboService(version = "1.0.0",timeout = 30000, interfaceClass = IBatchTaskCenter.class)
 public class BatchTaskCenterServer implements IBatchTaskCenter {
 
     @Autowired
