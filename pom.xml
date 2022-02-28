@@ -18,6 +18,7 @@
         <module>yuxiang-public</module>
         <module>yuxiang-server</module>
         <module>yuxiang-manager</module>
+        <module>yuxiang-common</module>
     </modules>
     <packaging>pom</packaging>
 
