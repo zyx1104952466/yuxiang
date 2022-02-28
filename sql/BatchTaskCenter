@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS `batch_task_center`;
+CREATE TABLE `batch_task_center`(
+   `id` VARCHAR(30) NOT NULL,
+   `task_name` VARCHAR(100) NOT NULL,
+   `build_status` CHAR(2) NOT NULL,
+   `task_type` CHAR(1) NOT NULL,
+   `creator_name` VARCHAR(100) NOT NULL,
+   `create_time` DATE,
+   `update_time` DATE,
+   `remark` VARCHAR(1000) NOT NULL,
+   `batch_sid` VARCHAR(30) NOT NULL,
+   `params` longtext NOT NULL,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

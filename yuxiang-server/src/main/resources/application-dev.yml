@@ -8,14 +8,14 @@ dubbo:
     name: dubbo
     port: 20880 #dubbo服务暴露的端口
   scan:
-    base-packages: com.yuxinag.server.remoteserver #扫描的包名
+    base-packages: com.yuxiang.server.remoteserver #扫描的包名
 
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
-    url: jdbc:mysql://localhost:3306/yuxiang?useUnicode=true&characterEncoding=utf-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    url: jdbc:mysql://localhost:3306/yuxiang?useUnicode=true&characterEncoding=utf-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=UTC
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 
