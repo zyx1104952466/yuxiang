@@ -19,6 +19,7 @@
         <module>yuxiang-server</module>
         <module>yuxiang-manager</module>
         <module>yuxiang-common</module>
+        <module>yuxiang-pool-job</module>
     </modules>
     <packaging>pom</packaging>
 
