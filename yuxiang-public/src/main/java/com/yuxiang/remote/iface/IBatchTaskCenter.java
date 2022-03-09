@@ -1,5 +1,6 @@
 package com.yuxiang.remote.iface;
 
+import com.yuxiang.dto.BatchTaskCenterDto;
 import com.yuxiang.entity.BatchTaskCenter;
 import com.yuxiang.entity.DownCenter;
 import com.yuxiang.exception.BizException;
@@ -22,7 +23,7 @@ public interface IBatchTaskCenter {
      * @return
      * @throws BizException
      */
-    public Paginater findPager(BatchTaskCenter bean, Pager pager) throws BizException;
+    public Paginater findPager(BatchTaskCenterDto bean, Pager pager) throws BizException;
 
     /**
      * 根据主键获取任务

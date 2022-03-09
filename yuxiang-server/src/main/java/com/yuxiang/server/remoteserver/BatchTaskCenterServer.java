@@ -1,5 +1,6 @@
 package com.yuxiang.server.remoteserver;
 
+import com.yuxiang.dto.BatchTaskCenterDto;
 import com.yuxiang.entity.BatchTaskCenter;
 import com.yuxiang.entity.DownCenter;
 import com.yuxiang.exception.BizException;
@@ -24,8 +25,8 @@ public class BatchTaskCenterServer implements IBatchTaskCenter {
     BatchTaskCenterService batchTaskCenterService;
 
     @Override
-    public Paginater findPager(BatchTaskCenter bean, Pager pager) throws BizException {
-        return null;
+    public Paginater findPager(BatchTaskCenterDto bean, Pager pager) throws BizException {
+        return batchTaskCenterService.findPager(bean, pager);
     }
 
     @Override
@@ -35,7 +36,7 @@ public class BatchTaskCenterServer implements IBatchTaskCenter {
 
     @Override
     public void delete(BatchTaskCenter bean) throws BizException {
-
+        batchTaskCenterService.delete(bean.getId());
     }
 
     @Override

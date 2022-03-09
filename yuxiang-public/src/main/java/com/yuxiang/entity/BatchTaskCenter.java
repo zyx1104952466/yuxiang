@@ -1,8 +1,9 @@
 package com.yuxiang.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class BatchTaskCenter {
+public class BatchTaskCenter implements Serializable {
     private String id;
 
     private String taskName;

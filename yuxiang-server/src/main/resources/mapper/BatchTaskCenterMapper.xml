@@ -108,4 +108,65 @@
       </if>
     </trim>
   </insert>
+
+  <delete id="delete" parameterType="java.lang.String">
+    delete from batch_task_center where id = #{id,jdbcType=VARCHAR};
+  </delete>
+
+  <sql id="batch_task_List">
+    id, task_name, build_status,
+    task_type, creator_name, create_time,
+    update_time, batch_sid, remark,
+    params
+  </sql>
+
+  <select id="count" resultType="java.lang.Long" parameterType="com.yuxiang.dto.BatchTaskCenterDto">
+
+    select count(*) from batch_task_center where 1=1
+
+    <if test="taskName != null">
+      <![CDATA[AND task_name like %#{taskName,jdbcType=VARCHAR}%]]>
+    </if>
+    <if test="buildStatus != null">
+      AND build_status = #{buildStatus,jdbcType=CHAR}
+    </if>
+    <if test="taskType != null">
+      AND task_type = #{taskType,jdbcType=CHAR}
+    </if>
+    <if test="creatorName != null">
+      AND creator_name = #{creatorName,jdbcType=VARCHAR}
+    </if>
+    <if test="createTimeStart != null and createTimeStart != ''">
+      <![CDATA[AND to_char(CREATE_TIME,'yyyyMMdd') >= #{createTimeStart}]]>
+    </if>
+    <if test="createTimeEnd != null and createTimeEnd != ''">
+      <![CDATA[AND to_char(CREATE_TIME,'yyyyMMdd') <= #{createTimeEnd}]]>
+    </if>
+  </select>
+
+  <select id="findPager" resultType="java.util.List" parameterType="com.yuxiang.dto.BatchTaskCenterDto">
+
+    select
+    <include refid="batch_task_List"/>
+    from batch_task_center where 1=1
+
+    <if test="taskName != null">
+      <![CDATA[AND task_name like %#{taskName,jdbcType=VARCHAR}%]]>
+    </if>
+    <if test="buildStatus != null">
+      AND build_status = #{buildStatus,jdbcType=CHAR}
+    </if>
+    <if test="taskType != null">
+      AND task_type = #{taskType,jdbcType=CHAR}
+    </if>
+    <if test="creatorName != null">
+      AND creator_name = #{creatorName,jdbcType=VARCHAR}
+    </if>
+    <if test="createTimeStart != null and createTimeStart != ''">
+      <![CDATA[AND to_char(CREATE_TIME,'yyyyMMdd') >= #{createTimeStart}]]>
+    </if>
+    <if test="createTimeEnd != null and createTimeEnd != ''">
+      <![CDATA[AND to_char(CREATE_TIME,'yyyyMMdd') <= #{createTimeEnd}]]>
+    </if>
+  </select>
 </mapper>

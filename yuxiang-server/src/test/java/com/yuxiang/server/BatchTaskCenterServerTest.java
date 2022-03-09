@@ -2,6 +2,7 @@ package com.yuxiang.server;
 import java.util.Date;
 
 import com.yuxiang.entity.BatchTaskCenter;
+import com.yuxiang.page.Pager;
 import com.yuxiang.remote.iface.IBatchTaskCenter;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -22,7 +23,7 @@ public class BatchTaskCenterServerTest extends BaseTest {
     private IBatchTaskCenter batchTaskCenterServer;
 
     @Test
-    public void test01() {
+    public void save() {
         logger.info("start");
         BatchTaskCenter bean = new BatchTaskCenter();
         bean.setId("2");
@@ -37,6 +38,13 @@ public class BatchTaskCenterServerTest extends BaseTest {
 
 
         batchTaskCenterServer.save(bean);
+        logger.info("end");
+    }
+
+    @Test
+    public void findPager() {
+        logger.info("start");
+        batchTaskCenterServer.findPager(null, new Pager(1, 10));
         logger.info("end");
     }
 }
