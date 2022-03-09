@@ -7,6 +7,7 @@ dubbo:
   protocol:
     name: dubbo
     port: 20880 #dubbo服务暴露的端口
+    threadpool: fixed #可选：fixed, cached, limited, eager
   scan:
     base-packages: com.yuxiang.server.remoteserver #扫描的包名
 
