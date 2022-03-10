@@ -8,13 +8,13 @@
 
 
 ## 代码结构
+> - yuxiang-admin:前端页面管理中心
 > - yuxiang-common:公共处理工具包
 > - yuxiang-file:文件处理中心
 > - yuxiang-manager:流程跳转处理中心
 > - yuxiang-pool-job:定时任务处理中心
 > - yuxiang-public:提供实体类、接口
 > - yuxiang-server:后端服务中心
-> - yuxiang-ui:前端页面管理中心
 
 ### 技术选型
 

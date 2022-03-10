@@ -17,11 +17,11 @@
         <module>yuxiang-file</module>
         <module>yuxiang-public</module>
         <module>yuxiang-server</module>
-        <module>yuxiang-manager</module>
         <module>yuxiang-common</module>
         <module>yuxiang-pool-job</module>
         <module>yuxiang-server-batch</module>
         <module>yuxiang-server-search</module>
+        <module>yuxiang-admin</module>
     </modules>
     <packaging>pom</packaging>
 

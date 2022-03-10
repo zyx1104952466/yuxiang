@@ -1,4 +1,4 @@
-# yuxiang-ui
+# yuxiang-admin-vue-project01
 
 ## Project setup
 ```
