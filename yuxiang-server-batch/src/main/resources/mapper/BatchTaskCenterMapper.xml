@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BatchTaskCenterMapper">
+  <resultMap id="BaseResultMap" type="com.yuxiang.file.entity.BatchTaskCenter">
+    <constructor>
+      <arg column="id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="task_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="build_status" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="task_type" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="creator_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="batch_sid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.yuxiang.file.entity.BatchTaskCenter">
+    <constructor>
+      <arg column="id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="task_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="build_status" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="task_type" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="creator_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="batch_sid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="params" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Blob_Column_List">
+    params
+  </sql>
+
+  <sql id="batch_task_List">
+    id, task_name, build_status,
+    task_type, creator_name, create_time,
+    update_time, batch_sid, remark,
+    params
+  </sql>
+
+</mapper>

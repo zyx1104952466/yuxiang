@@ -3,6 +3,30 @@ server:
   servlet:
     context-path: /yuxiang-file/
 
+dubbo:
+  application:
+    name: yuxiang-file #应用名
+    owner: zhangyux #系统负责人
+    organization: yuxiang #系统所属组织
+  registry:
+    address: zookeeper://localhost #zookeeper地址
+    port: 2181 #提供注册的端口
+    client: curator
+  protocol:
+    name: dubbo
+  consumer:
+    retries: 0
+    timeout: 60000
+    loadbalance: roundrobin
+  scan:
+    base-packages: com.yuxiang.manager.config.dubbo #扫描的包名
+  qos:
+    enable: true
+    accept:
+      foreign:
+        ip: true
+    port: 22222
+
 logging:
   config: classpath:conf/logback-spring.xml
   file:

@@ -20,6 +20,8 @@
         <module>yuxiang-manager</module>
         <module>yuxiang-common</module>
         <module>yuxiang-pool-job</module>
+        <module>yuxiang-server-batch</module>
+        <module>yuxiang-server-search</module>
     </modules>
     <packaging>pom</packaging>
 

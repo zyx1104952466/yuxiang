@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yuxiang.server.dao.BatchTaskCenterMapper">
-  <resultMap id="BaseResultMap" type="com.yuxiang.entity.BatchTaskCenter">
+<mapper namespace="com.yuxiang.file.server.dao.BatchTaskCenterMapper">
+  <resultMap id="BaseResultMap" type="com.yuxiang.file.entity.BatchTaskCenter">
     <constructor>
       <arg column="id" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="task_name" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -14,7 +14,7 @@
       <arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.yuxiang.entity.BatchTaskCenter">
+  <resultMap id="ResultMapWithBLOBs" type="com.yuxiang.file.entity.BatchTaskCenter">
     <constructor>
       <arg column="id" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="task_name" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -31,7 +31,7 @@
   <sql id="Blob_Column_List">
     params
   </sql>
-  <insert id="insert" parameterType="com.yuxiang.entity.BatchTaskCenter">
+  <insert id="insert" parameterType="com.yuxiang.file.entity.BatchTaskCenter">
     insert into batch_task_center (id, task_name, build_status, 
       task_type, creator_name, create_time, 
       update_time, batch_sid, remark, 
@@ -41,7 +41,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{batchSid,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
       #{params,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.yuxiang.entity.BatchTaskCenter">
+  <insert id="insertSelective" parameterType="com.yuxiang.file.entity.BatchTaskCenter">
     insert into batch_task_center
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -120,7 +120,7 @@
     params
   </sql>
 
-  <select id="count" resultType="java.lang.Long" parameterType="com.yuxiang.dto.BatchTaskCenterDto">
+  <select id="count" resultType="java.lang.Long" parameterType="com.yuxiang.file.dto.BatchTaskCenterDto">
 
     select count(*) from batch_task_center where 1=1
 
@@ -144,7 +144,7 @@
     </if>
   </select>
 
-  <select id="findPager" resultMap="ResultMapWithBLOBs" parameterType="com.yuxiang.dto.BatchTaskCenterDto">
+  <select id="findPager" resultMap="ResultMapWithBLOBs" parameterType="com.yuxiang.file.dto.BatchTaskCenterDto">
 
     select
     <include refid="batch_task_List"/>
