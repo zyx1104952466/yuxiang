@@ -144,7 +144,7 @@
     </if>
   </select>
 
-  <select id="findPager" resultType="java.util.List" parameterType="com.yuxiang.dto.BatchTaskCenterDto">
+  <select id="findPager" resultMap="ResultMapWithBLOBs" parameterType="com.yuxiang.dto.BatchTaskCenterDto">
 
     select
     <include refid="batch_task_List"/>

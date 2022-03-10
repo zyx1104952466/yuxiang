@@ -1,8 +1,10 @@
 package com.yuxiang.server;
 import java.util.Date;
 
+import com.alibaba.fastjson.JSON;
 import com.yuxiang.entity.BatchTaskCenter;
 import com.yuxiang.page.Pager;
+import com.yuxiang.page.Paginater;
 import com.yuxiang.remote.iface.IBatchTaskCenter;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -44,7 +46,9 @@ public class BatchTaskCenterServerTest extends BaseTest {
     @Test
     public void findPager() {
         logger.info("start");
-        batchTaskCenterServer.findPager(null, new Pager(1, 10));
+        Paginater paginater = batchTaskCenterServer.findPager(null, new Pager(1, 10));
+        System.out.println(JSON.toJSONString(paginater.getData()));
+        logger.info(JSON.toJSONString(paginater.getData()));
         logger.info("end");
     }
 }
