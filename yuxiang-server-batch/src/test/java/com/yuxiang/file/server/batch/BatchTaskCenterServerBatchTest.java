@@ -1,6 +1,6 @@
 package com.yuxiang.file.server.batch;
 
-import com.yuxiang.file.remote.iface.search.IBatchTaskCenterSearch;
+import com.yuxiang.remote.iface.search.IBatchTaskCenterSearch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

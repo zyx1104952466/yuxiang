@@ -1,6 +1,6 @@
 package com.yuxiang.file.server;
 
-import com.yuxiang.file.entity.DownCenter;
+import com.yuxiang.entity.DownCenter;
 import com.yuxiang.file.threadpool.ThreadPoolExecutorManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

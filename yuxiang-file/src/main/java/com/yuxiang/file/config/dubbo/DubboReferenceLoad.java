@@ -1,6 +1,6 @@
 package com.yuxiang.file.config.dubbo;
 
-import com.yuxiang.file.remote.iface.IBatchTaskCenter;
+import com.yuxiang.remote.iface.IBatchTaskCenter;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.context.annotation.Configuration;
 

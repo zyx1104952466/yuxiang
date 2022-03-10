@@ -1,12 +1,12 @@
 package com.yuxiang.file.download;
 
 import com.alibaba.fastjson.JSON;
-import com.yuxiang.file.constant.GeneralConstant;
-import com.yuxiang.file.entity.DownCenter;
-import com.yuxiang.file.page.Pager;
-import com.yuxiang.file.page.Paginater;
-import com.yuxiang.file.common.utils.FileToZip;
-import com.yuxiang.file.common.utils.FileUtil;
+import com.yuxiang.constant.GeneralConstant;
+import com.yuxiang.entity.DownCenter;
+import com.yuxiang.page.Pager;
+import com.yuxiang.page.Paginater;
+import com.yuxiang.common.utils.FileToZip;
+import com.yuxiang.common.utils.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,9 +1,9 @@
 package com.yuxiang.file.server.search;
 
 import com.alibaba.fastjson.JSON;
-import com.yuxiang.file.remote.iface.search.IBatchTaskCenterSearch;
-import com.yuxiang.file.page.Pager;
-import com.yuxiang.file.page.Paginater;
+import com.yuxiang.remote.iface.search.IBatchTaskCenterSearch;
+import com.yuxiang.page.Pager;
+import com.yuxiang.page.Paginater;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

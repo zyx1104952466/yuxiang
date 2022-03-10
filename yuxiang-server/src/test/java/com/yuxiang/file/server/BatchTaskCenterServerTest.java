@@ -1,8 +1,8 @@
 package com.yuxiang.file.server;
 import java.util.Date;
 
-import com.yuxiang.file.entity.BatchTaskCenter;
-import com.yuxiang.file.remote.iface.IBatchTaskCenter;
+import com.yuxiang.entity.BatchTaskCenter;
+import com.yuxiang.remote.iface.IBatchTaskCenter;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

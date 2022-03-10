@@ -1,9 +1,9 @@
 package com.yuxiang.file.download.task;
 
 import com.yuxiang.file.download.AbstractGenerateFileTemplate;
-import com.yuxiang.file.entity.DownCenter;
-import com.yuxiang.file.page.Pager;
-import com.yuxiang.file.page.Paginater;
+import com.yuxiang.entity.DownCenter;
+import com.yuxiang.page.Pager;
+import com.yuxiang.page.Paginater;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

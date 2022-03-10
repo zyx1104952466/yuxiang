@@ -1,6 +1,6 @@
 package com.yuxiang.file.download;
 
-import com.yuxiang.file.entity.DownCenter;
+import com.yuxiang.entity.DownCenter;
 
 /**
  * @ClassName IDownLoadProcess
