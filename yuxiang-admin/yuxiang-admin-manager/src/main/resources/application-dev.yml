@@ -1,11 +1,11 @@
 server:
   port: 8080
   servlet:
-    context-path: /yuxiang-manager/
+    context-path: /yuxiang-admin-manager/
 
 dubbo:
   application:
-    name: yuxiang-manager #应用名
+    name: yuxiang-admin-manager #应用名
     owner: zhangyux #系统负责人
     organization: yuxiang #系统所属组织
   registry:
