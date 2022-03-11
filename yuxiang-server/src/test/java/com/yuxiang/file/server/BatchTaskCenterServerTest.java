@@ -25,7 +25,7 @@ public class BatchTaskCenterServerTest extends BaseTest {
     public void save() {
         logger.info("start");
         BatchTaskCenter bean = new BatchTaskCenter();
-        bean.setId("3");
+        bean.setId("4");
         bean.setTaskName("test");
         bean.setBuildStatus("01");
         bean.setTaskType("D");

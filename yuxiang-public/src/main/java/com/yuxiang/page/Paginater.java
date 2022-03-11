@@ -1,5 +1,6 @@
 package com.yuxiang.page;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
  * @version 1.0
  * @date 2022/2/24 10:46
  */
-public class Paginater {
+public class Paginater implements Serializable {
 
     public static final int PAGE_SIZE = 5;
     public static final Paginater EMPTY = new Paginater(0, 0);

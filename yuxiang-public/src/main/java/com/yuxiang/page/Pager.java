@@ -1,11 +1,13 @@
 package com.yuxiang.page;
 
+import java.io.Serializable;
+
 /**
  * @author zhangyux
  * @version 1.0
  * @date 2022/2/24 10:43
  */
-public class Pager {
+public class Pager implements Serializable {
 
     private long pageNumber;
     private int pageSize;

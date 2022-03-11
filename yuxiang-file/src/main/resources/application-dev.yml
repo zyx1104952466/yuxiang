@@ -14,12 +14,16 @@ dubbo:
     client: curator
   protocol:
     name: dubbo
+    port: 20883 #dubbo服务暴露的端口
+    threadpool: fixed #可选：fixed, cached, limited, eager
+    threads: 500
+    accepts: 1000
   consumer:
     retries: 0
     timeout: 60000
     loadbalance: roundrobin
   scan:
-    base-packages: com.yuxiang.manager.config.dubbo #扫描的包名
+    base-packages: com.yuxiang.file.config.dubbo, com.yuxiang.file.remoteserver #扫描的包名
   qos:
     enable: true
     accept:

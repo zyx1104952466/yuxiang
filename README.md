@@ -15,6 +15,12 @@
 > - yuxiang-pool-job:定时任务处理中心
 > - yuxiang-public:提供实体类、接口
 > - yuxiang-server:后端服务中心
+> - yuxiang-server-batch:后端服务中心（专门处理批量业务）
+> - yuxiang-server-search:后端服务中心（专门提供查询服务）
+
+## 关联的管理台
+> - dubbo-admin（管理dubbo服务）
+> - xxl-job-admin（管理定时任务）
 
 ### 技术选型
 
