@@ -1,6 +1,7 @@
 package com.yuxiang.file.server.search;
 
 import com.alibaba.fastjson.JSON;
+import com.yuxiang.entity.BatchTaskCenter;
 import com.yuxiang.remote.iface.search.IBatchTaskCenterSearch;
 import com.yuxiang.page.Pager;
 import com.yuxiang.page.Paginater;
@@ -28,6 +29,14 @@ public class BatchTaskCenterServerSearchTest extends BaseTest {
         Paginater paginater = batchTaskCenterServerSearch.findPager(null, new Pager(1, 10));
         System.out.println(JSON.toJSONString(paginater.getData()));
         logger.info(JSON.toJSONString(paginater.getData()));
+        logger.info("end");
+    }
+
+    @Test
+    public void findById() {
+        logger.info("start");
+        BatchTaskCenter batchTaskCenter = batchTaskCenterServerSearch.findById("1");
+        logger.info(JSON.toJSONString(batchTaskCenter));
         logger.info("end");
     }
 }

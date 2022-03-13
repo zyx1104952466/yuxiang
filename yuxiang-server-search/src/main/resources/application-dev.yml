@@ -7,8 +7,8 @@ dubbo:
   protocol:
     name: dubbo
     port: 20882 #dubbo服务暴露的端口
-    threadpool: fixed #可选：fixed, cached, limited, eager
-    threads: 500
+    threadpool: cached #可选：fixed, cached, limited, eager
+    threads: 800
     accepts: 1000
   scan:
     base-packages: com.yuxiang.server.search.remoteserver #扫描的包名

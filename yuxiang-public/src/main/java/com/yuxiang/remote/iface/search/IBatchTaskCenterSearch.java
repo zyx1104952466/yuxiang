@@ -30,22 +30,6 @@ public interface IBatchTaskCenterSearch {
      * @return
      * @throws BizException
      */
-    public BatchTaskCenter getBatchTaskCenterById(Long id) throws BizException;
+    public BatchTaskCenter findById(String id) throws BizException;
 
-    /**
-     * 根据对象获取任务集合
-     * @param bean
-     * @return
-     * @throws BizException
-     */
-    public List<BatchTaskCenter> getListByBatchTaskCenter(BatchTaskCenter bean) throws BizException;
-
-    /**
-     * 获取未处理完成的任务列表
-     * @param taskName
-     * @param buildSts
-     * @return
-     * @throws BizException
-     */
-    public List<BatchTaskCenter> getListByNameAndStatus(String taskName, String buildSts) throws BizException;
 }

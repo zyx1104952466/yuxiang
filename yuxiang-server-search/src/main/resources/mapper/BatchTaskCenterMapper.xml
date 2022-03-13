@@ -88,4 +88,10 @@
       <![CDATA[AND to_char(CREATE_TIME,'yyyyMMdd') <= #{createTimeEnd}]]>
     </if>
   </select>
+    <select id="findById"  resultMap="ResultMapWithBLOBs">
+      select
+      <include refid="batch_task_List"/>
+      from batch_task_center
+      where id = #{id,jdbcType=VARCHAR}
+    </select>
 </mapper>

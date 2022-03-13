@@ -2,6 +2,7 @@ package com.yuxiang.server.search.service;
 
 import com.github.pagehelper.PageHelper;
 import com.yuxiang.dto.BatchTaskCenterDto;
+import com.yuxiang.entity.BatchTaskCenter;
 import com.yuxiang.page.Pager;
 import com.yuxiang.page.Paginater;
 import com.yuxiang.server.search.dao.BatchTaskCenterMapper;
@@ -32,5 +33,9 @@ public class BatchTaskCenterService {
         // 设置返回数据对象
         paginater.setData(resultList);
         return paginater;
+    }
+
+    public BatchTaskCenter findById(String id) {
+        return batchTaskCenterMapper.findById(id);
     }
 }
